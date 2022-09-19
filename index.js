@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3700;
 
 app.get('/', (req, res) => {
     res.send("Node Server is running")
+    res.send(`Listening on port ${PORT}`)
 })
 
  io.on("connection", (socket) => {
