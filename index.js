@@ -7,18 +7,18 @@ const io = new Server(server)
 const PORT = process.env.PORT || 3700;
 
 app.get('/', (req, res) => {
-    console.log("aaa")
     res.send("Node Server is running on PORT: "+PORT)
 })
-
- io.on("connection", (socket) => {
+console.log("Dolazi do socketa")
+io.on("connection", (socket) => {
+    console.log("Connected")
      socket.io("position-change", (data) => {
-         conosle.log("Opalac: "+data)
+        console.log("Opalac: "+data)
          io.emit("position-change", data);
      });
 
      socket.on("disconnect", () => {
-
+        console.log("Disconnected")
      });
  }); 
 
