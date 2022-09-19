@@ -7,7 +7,7 @@ const io = new Server(server)
 const PORT = process.env.PORT || 3700;
 
 app.get('/', (req, res) => {
-    res.send("Node Server is runningaa")
+    res.send("Node Server is running on PORT: "+PORT)
 })
 
  io.on("connection", (socket) => {
